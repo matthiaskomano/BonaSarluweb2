@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Bona Sarlu Construction</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Navbar Links Hover ===== */
+    header nav ul li a {
+      transition: color 0.3s, transform 0.2s;
+    }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    /* ===== Buttons Hover ===== */
+    .btn {
+      transition: background 0.3s, transform 0.2s;
+      background: #004080;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      background: #003366;
+      transform: scale(1.05);
+    }
+
+    /* ===== Footer Links Hover ===== */
+    .footer-links ul li a,
+    .footer-social a {
+      transition: color 0.3s, transform 0.2s;
+    }
+    .footer-links ul li a:hover,
+    .footer-social a:hover {
+      color: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    /* ===== Modern Contact Form ===== */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact {
+      padding: 4rem 0;
+      background: #f8f9fa;
+      text-align: center;
+    }
+    .contact h1 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: #004080;
+    }
+    .contact p {
+      margin-bottom: 2rem;
+      color: #555;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .contact-form:hover {
+      transform: translateY(-5px);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 100%;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #004080;
+      box-shadow: 0 0 10px rgba(0, 64, 128, 0.2);
+      outline: none;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .contact-info {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    .contact-info strong {
+      color: #004080;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .contact-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête / Navbar -->
+  <header>
+    <div class="logo">Bona Sarlu</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="testimonials.html">Témoignages</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- Section Contact -->
+  <section class="contact">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <p>Envoyez-nous un message ou visitez notre bureau.</p>
+      <form action="#" method="post" class="contact-form" id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        <input type="email" id="email" name="email" placeholder="Votre email" required>
+        <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+        <button type="submit" class="btn">Envoyer le message</button>
+        <p id="formMessage"></p>
+      </form>
+      <div class="contact-info">
+        <p><strong>Adresse :</strong> Commune De Sonfonia, Guinée</p>
+        <p><strong>Téléphone :</strong> +224628072501</p>
+        <p><strong>Email :</strong> bonasarlu@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="testimonials.html">Témoignages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Commune De Sonfonia, Guinée</p>
+        <p>Téléphone : +224628072501</p>
+        <p>Email : bonasarlu@gmail.com</p>
+      </div>
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bona Sarlu Construction. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar toggle for mobile
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+
+    // Scroll reveal for sections
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>

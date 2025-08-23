@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Bona Sarlu Construction</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Header Logo & Company Name ===== */
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .logo .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    header .logo .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+
+    /* ===== Navigation Hover Effect ===== */
+    header nav ul li a {
+      transition: color 0.3s, transform 0.2s;
+    }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    /* ===== Service Card Hover & Fade-in ===== */
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.8s, transform 0.8s;
+      border-radius: 10px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(50px); /* start slightly below */
+    }
+
+    .service-card.show {
+      opacity: 1;
+      transform: translateY(0); /* move to original position */
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Button Hover Effect ===== */
+    .btn {
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #e6b800;
+      transform: scale(1.05);
+    }
+
+    /* ===== Footer Links Hover ===== */
+    .footer-links ul li a,
+    .footer-social a {
+      transition: color 0.3s, transform 0.2s;
+    }
+    .footer-links ul li a:hover,
+    .footer-social a:hover {
+      color: #ffcc00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête / Navbar -->
+  <header>
+    <div class="logo">
+      <span class="company-name">Bona Sarlu</span>
+      <a href="index.html">
+        <img src="images/logo.jpg" alt="Bona Sarlu Logo" class="logo-img">
+      </a>
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="testimonials.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- Section Services -->
+  <section class="services">
+    <div class="container">
+      <h1>Nos Services</h1>
+      <p>Nous offrons une large gamme de services de construction adaptés à vos besoins.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="images/building.jpg" alt="Construction">
+          <h2>Construction Résidentielle</h2>
+          <p>Concevoir et construire des maisons avec des matériaux de qualité et des designs modernes.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/renovation.png" alt="Rénovation">
+          <h2>Construction Commerciale</h2>
+          <p>Construire des bureaux, centres commerciaux et complexes commerciaux de manière efficace.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/architecture.jpg" alt="Architecture">
+          <h2>Construction Industrielle</h2>
+          <p>Usines industrielles et entrepôts conçus pour la performance et la sécurité.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/road.jpg" alt="Routes">
+          <h2>Routes & Infrastructures</h2>
+          <p>Construire des routes, ponts et infrastructures selon les normes modernes.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/interior.png" alt="Intérieur">
+          <h2>Design Intérieur</h2>
+          <p>Créer des intérieurs élégants et fonctionnels pour les espaces résidentiels et commerciaux.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/consulting.jpg" alt="Consultation">
+          <h2>Consultation</h2>
+          <p>Conseils et planification experts pour des projets de construction réussis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Liens Rapides</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="testimonials.html">Témoignages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Commune De Sonfonia, Guinée</p>
+        <p>Téléphone : +224628072501</p>
+        <p>Email : bonasarlu@gmail.com</p>
+      </div>
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bona Sarlu Construction. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar toggle for mobile
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+
+    // Fade-in scroll effect for service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    const fadeInOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      serviceCards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < triggerBottom){
+          card.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+  </script>
+</body>
+</html>
